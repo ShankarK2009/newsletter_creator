@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    :root {
+        --font1: "DM Sans", sans-serif;
+        --font2: "Work Sans", sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+    article {
+        width: 80%;
+        margin: auto;
+    }
+
+    .large {
+        font-family: var(--font1);
+        font-size: 40px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .small {
+        font-family: var(--font2);
+        color: black;
+        font-size: 15px;
+    }
+
+    .medium {
+        font-family: var(--font2);
+        font-size: 25px;
+    }
+
+    .littleSpace {
+        padding: 20px;
+    }
+
+    .mediumSpace {
+        padding: 40px;
+    }
+
+    .largeSpace {
+        padding: 60px;
+    }
+
+    .margin-top {
+        margin-top: 20px;
+    }
+
+    .margin-bottom {
+        margin-bottom: 20px;
+    }
+
+    .small-margin-top {
+        margin-top: 5px;
+    }
+
+    .small-margin-bottom {
+        margin-bottom: 5px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .card {
+        padding: 25px 15px;
+        border: 3px solid #333;
+        border-radius: 10px;
+        width: 350px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .sports {
+        margin-top: 50px;
+    }
+
+    a:not(.lakshan) {
+        padding: 10px;
+        border: 2px solid #333;
+        border-radius: 5px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .cardContainer {
+        gap: 30px 20px;
+    }
+
+    .sportCard {
+        height: 120px;
+        padding: 10px;
+        border: 3px solid #333;
+        border-radius: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .sportCard table tr td {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .headlines table tr td, .sports table tr td {
+        padding: 5px;
+    }
+
+    .team img {
+        margin: 10px;
+    }
+
+    .logo {
+        width: 50px;
+        aspect-ratio: 1 1;
+    }
+
+    .footer {
+        padding: 20px 0;
+    }
+
+    table, caption, tbody, tfoot, thead, tr, th, td  {
+    margin: 0;
+    /* padding: 10px 5px; */
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    }
+
+    table {
+        text-align: left;
+    }
+</style>
+<body>
+    <article>
+        <div class="marginTop newsletterContainer">
+            <h1 class="large">Nvidia to Open Quantum Computing Lab, Meta AI comes to the EU, Anthropic Adds Web Search to Claude, OpenAI Improves Transcription and Voice-Generating AI Model!</h1>
+            <div class="margin-top">
+                <hr>
+                <div class="littleSpace  dateContainer">
+                    <p class="medium">March 23, 2025</p>
+                    <p class="small">Lakshan Suresh</p>
+                </div>
+                <hr>
+            </div>
+            <div class="margin-top margin-bottom">
+                <p class="medium">Welcome!<br><br>I publish AI newsletters every morning with curated AI/tech news stories, cool AI projects, and technical research papers. Grab your coffee beans and catch up on yesterday’s top bytes!</p>
+            </div>
+            <hr>
+
+            <section class="headlines margin-top">
+                <p class="large margin-bottom">Headlines</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                                <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- <div class="cardContainer">
+                    <div class="card">
+                        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                        <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                        <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                        <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                    </div>
+                    <div class="card">
+                        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                        <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                        <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                        <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                    </div>
+                    <div class="card">
+                        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                        <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                        <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                        <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                    </div>
+                    <div class="card">
+                        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                        <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                        <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                        <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                    </div>
+                    <div class="card">
+                        <img src="https://ichef.bbci.co.uk/news/1024/branded_news/93e1/live/ea3716d0-0712-11f0-94d4-6f954f5dcfa3.jpg" alt="" class="thumbnail">
+                        <p class="medium bold small-margin-bottom">Israel strikes Lebanon after first rocket attack since ceasefire - BBC.com</p>
+                        <p class="small margin-bottom">The UN peacekeeping force in Lebanon, Unifil, said it was "alarmed by the possible escalation of violence".</p>
+                        <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                    </div>
+                </div> -->
+            </section>
+            
+            <section class="sports margin-top">
+                <p class="large">Sports Results</p>
+                <p class="medium margin-top margin-bottom">Soccer (PL, La Liga, UCL)</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="" class="logo">
+                                                <p class="small">Leicester City</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">0</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">3</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="" class="logo">
+                                                <p class="small">Man United</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p class="medium margin-top margin-bottom">NBA</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">136</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">130</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p class="medium margin-top margin-bottom">March Madness</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sportCard">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/96.png" alt="" class="logo">
+                                                <p class="small">Pistons</p>
+                                            </div>
+                                        </td>
+                                        <td><p class="large">57</p></td>
+                                        <td><p class="large">-</p></td>
+                                        <td><p class="large">45</p></td>
+                                        <td>
+                                            <div class="team">
+                                                <img src="https://a.espncdn.com/i/teamlogos/ncaa/500/356.png" alt="" class="logo">
+                                                <p class="small">Pelicans</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="finance margin-top">
+                <p class="large">Finance</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://fortune.com/img-assets/wp-content/uploads/2025/03/GettyImages-2204586440_6235bf-e1742401374497.jpg?resize=1200,600" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Tesla investors at a loss as Elon Musk drags down stock price: ‘This time it feels different’ - Fortune</p>
+                                <p class="small margin-bottom">Tesla finds itself in uncharted territory, now that it appears to have lost its aura of infallibility, leaving punters in the dark about its outlook.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://fortune.com/img-assets/wp-content/uploads/2025/03/GettyImages-2204586440_6235bf-e1742401374497.jpg?resize=1200,600" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Tesla investors at a loss as Elon Musk drags down stock price: ‘This time it feels different’ - Fortune</p>
+                                <p class="small margin-bottom">Tesla finds itself in uncharted territory, now that it appears to have lost its aura of infallibility, leaving punters in the dark about its outlook.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://fortune.com/img-assets/wp-content/uploads/2025/03/GettyImages-2204586440_6235bf-e1742401374497.jpg?resize=1200,600" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Tesla investors at a loss as Elon Musk drags down stock price: ‘This time it feels different’ - Fortune</p>
+                                <p class="small margin-bottom">Tesla finds itself in uncharted territory, now that it appears to have lost its aura of infallibility, leaving punters in the dark about its outlook.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://fortune.com/img-assets/wp-content/uploads/2025/03/GettyImages-2204586440_6235bf-e1742401374497.jpg?resize=1200,600" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Tesla investors at a loss as Elon Musk drags down stock price: ‘This time it feels different’ - Fortune</p>
+                                <p class="small margin-bottom">Tesla finds itself in uncharted territory, now that it appears to have lost its aura of infallibility, leaving punters in the dark about its outlook.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="science margin-top">
+                <p class="large">Science/Tech</p>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://www.thebrighterside.news/uploads/2025/03/big-bang.jpg?auto=webp" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Scientists think they discovered what existed before the Big Bang - The Brighter Side of News</p>
+                                <p class="small margin-bottom"> In the 1930s, researchers first noticed oddities in how galaxies moved, suggesting something invisible exerted gravitational pull.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://www.thebrighterside.news/uploads/2025/03/big-bang.jpg?auto=webp" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Scientists think they discovered what existed before the Big Bang - The Brighter Side of News</p>
+                                <p class="small margin-bottom"> In the 1930s, researchers first noticed oddities in how galaxies moved, suggesting something invisible exerted gravitational pull.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="card">
+                                <img src="https://www.thebrighterside.news/uploads/2025/03/big-bang.jpg?auto=webp" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Scientists think they discovered what existed before the Big Bang - The Brighter Side of News</p>
+                                <p class="small margin-bottom"> In the 1930s, researchers first noticed oddities in how galaxies moved, suggesting something invisible exerted gravitational pull.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card">
+                                <img src="https://www.thebrighterside.news/uploads/2025/03/big-bang.jpg?auto=webp" alt="" class="thumbnail">
+                                <p class="medium bold small-margin-bottom">Scientists think they discovered what existed before the Big Bang - The Brighter Side of News</p>
+                                <p class="small margin-bottom"> In the 1930s, researchers first noticed oddities in how galaxies moved, suggesting something invisible exerted gravitational pull.</p>
+                                <a href="https://www.bbc.com/news/articles/cn4ynpzk8d8o" class="small">Read More</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <footer class="footer margin-top">
+                <hr>
+                <br>
+                <p class="small">Copyright © Newsletter 2025, All rights reserved</p>
+                <br>
+                <p class="small">About <a class="lakshan" href="lakshansuresh.netlify.app">Lakshan Suresh</a></p>
+                <br>
+                <hr class="margin-bottom">
+            </footer>
+        </div>
+    </article>
+</body>
+</html>
