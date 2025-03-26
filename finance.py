@@ -24,7 +24,7 @@ def finance():
         print(f"Date: {source["publishedAt"][:source["publishedAt"].find("T")]}")
         print("=" * 40)
         print("\n")
-        if len(source['description']) > 150:
+        if source['description'] != None and len(source['description']) > 150:
             fin_results.append([source["urlToImage"], source["title"], source["description"][:130]+"...", source["url"]])
         else:
             fin_results.append([source["urlToImage"], source["title"], source["description"], source["url"]])

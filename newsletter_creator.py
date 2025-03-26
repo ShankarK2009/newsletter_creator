@@ -3,6 +3,7 @@ from headlines import get_headlines
 from sports_results import sports
 from finance import finance
 from science_tech import science
+import minify_html
 
 def headlines_code():
     headlines = get_headlines()
@@ -75,7 +76,7 @@ def sports_code():
         """
         if match[6] == "Scheduled":
             card = f"""
-                                <td>
+                                <td class="noScore">
                                     <div class="sportCard">
                                         <table>
                                             <tr>
@@ -101,7 +102,7 @@ def sports_code():
             sports_code += card
         elif match[6] != "Scheduled" or match[6] != "In Progress":
             card = f"""
-                                <td>
+                                <td class="score>
                                     <div class="sportCard">
                                         <table>
                                             <tr>
@@ -136,8 +137,10 @@ def sports_code():
             
     sports_code += """
                 </table>
+                </div>
                 <br>
                 <p class="medium-large margin-top margin-bottom">NBA</p>
+                <div class="table">
                 <table>
 """            
 
@@ -212,8 +215,10 @@ def sports_code():
 
     sports_code += """
                 </table>
+                </div>
                 <br>
                 <p class="medium-large margin-top margin-bottom">March Madness</p>
+                <div class="table">
                 <table>
     """
 
@@ -285,6 +290,7 @@ def sports_code():
         """
     sports_code += """
                     </table>
+                    </div>
                 </div>
             </section>
     """
@@ -297,6 +303,7 @@ def finance_code():
     fin_code = f"""
             <section class="finance margin-top">
                 <p class="large">Finance</p>
+                <div class="table">
                 <table>
                     <tr>
                         <td>
@@ -335,6 +342,7 @@ def finance_code():
                         </td>
                     </tr>
                 </table>
+                </div>
             </section>
     """
     return fin_code
@@ -344,6 +352,7 @@ def science_code():
      science_code = f"""
             <section class="science margin-top">
                 <p class="large">Science/Tech</p>
+                <div class="table">
                 <table>
                     <tr>
                         <td>
@@ -382,6 +391,7 @@ def science_code():
                         </td>
                     </tr>
                 </table>
+                </div>
             </section>
     """
      return science_code
@@ -429,37 +439,29 @@ html_code = """
 
     .large {
         font-family: var(--font1);
-        font-size: 35px;
+        font-size: 3vw;
         color: #333;
         font-weight: bold;
     }
 
     .medium-large {
         font-family: var(--font1);
-        font-size: 25px;
+        font-size: 2vw;
     }
 
     .small {
         font-family: var(--font2);
         color: black;
-        font-size: 20px;
+        font-size: 1.2vw;
     }
 
     .medium {
         font-family: var(--font2);
-        font-size: 25px;
+        font-size: 1.7vw;
     }
 
     .littleSpace {
         padding: 20px;
-    }
-
-    .mediumSpace {
-        padding: 40px;
-    }
-
-    .largeSpace {
-        padding: 60px;
     }
 
     .margin-top {
@@ -486,7 +488,7 @@ html_code = """
         padding: 25px 15px;
         border: 3px solid #333;
         border-radius: 10px;
-        width: 400px;
+        width: 25vw;
     }
 
     img {
@@ -511,30 +513,72 @@ html_code = """
     }
 
     .card img {
-        height: 250px;
+        /* height: 27vh; */
         object-fit: cover;
     }
 
     .sportCard {
-        height: 130px;
-        width: 350px;
-        padding: 10px;
-        border: 3px solid #333;
-        border-radius: 10px;
+    min-width: 250px; /* Minimum width for scheduled matches */
+    width: auto; /* Allows expansion for scored matches */
+    padding: 10px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+    .sportCard table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    /* For scheduled matches (3 columns) */
+    .sportCard table tr td {
+        width: auto;
+        padding: 5px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /* For matches with scores (5 columns) */
+    .sportCard table tr td.score-cell {
+        width: auto;
+        min-width: 30px; /* Ensures score cells don't collapse */
+    }
+
+    /* Team name styling */
+    .team p.small {
+        white-space: nowrap; /* Prevents team names from wrapping */
+        margin: 5px 0 0 0;
+    }
+
+    .team {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .team img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .team p {
+        margin: 5px 0 0 0;
     }
 
     .table {
         width: 100%;
-    }
-
-    .sportCard table tr td {
-        width: 30%;
-        padding: 5px;
-        text-align: center;
+        display: block;
+        float: left;
     }
 
     .headlines table tr td, .sports table tr td {
         padding: 5px;
+    }
+
+    .headlines table tr td, .finance table tr td, .science table tr td {
+        vertical-align: top;
     }
 
     .team img {
@@ -576,12 +620,12 @@ html_code = """
                 </div>
                 <hr>
             </div>
+            <div class="margin-top margin-bottom">
+                <p class="medium">Welcome!<br><br>Stay ahead with today’s most important updates—curated just for you. Whether it’s breaking news, thrilling sports results, market-moving finance trends, or groundbreaking science discoveries, we bring you the stories that matter in a clear, concise format.<br><br>Dive in and explore what’s shaping our world right now.<br><br>Happy reading!</p>
+            </div>
+            <hr>
             
 """
-# <div class="margin-top margin-bottom">
-#                 <p class="medium">Welcome!<br><br>I publish AI newsletters every morning with curated AI/tech news stories, cool AI projects, and technical research papers. Grab your coffee beans and catch up on yesterday’s top bytes!</p>
-#             </div>
-#             <hr>
 
 html_code += headlines_code()
 html_code += sports_code()
@@ -597,5 +641,7 @@ html_code += """
 """
 
 html_file = open("generated_newsletter.html", "w")
+
+html_code = minify_html.minify(html_code, minify_css=True, remove_processing_instructions=True)
 
 html_file.write(html_code)
