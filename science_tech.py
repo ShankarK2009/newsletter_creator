@@ -1,6 +1,10 @@
 from newsapi import NewsApiClient
+from dotenv import load_dotenv
+import os
 
-newsapi = NewsApiClient(api_key='c89e3820dbd34bb1afe2b101c5ecc6a8')
+load_dotenv()
+
+newsapi = NewsApiClient(api_key=os.getenv("NEWS_API"))
 
 news = []
 

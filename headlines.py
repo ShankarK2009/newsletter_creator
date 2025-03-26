@@ -1,13 +1,18 @@
-import requests
+from newsapi import NewsApiClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 results = []
 
 def get_headlines():
-    url = ('https://newsapi.org/v2/top-headlines?'
-        'country=us&'
-        'apiKey=c89e3820dbd34bb1afe2b101c5ecc6a8')
-    response = requests.get(url)
-    response = response.json()
+    newsapi = NewsApiClient(api_key=os.getenv("NEWS_API"))
+
+    response = newsapi.get_top_headlines(
+                                            language='en',
+                                            page_size=4
+                                            )
     articles = response['articles']
 
     for source in articles[:4]:

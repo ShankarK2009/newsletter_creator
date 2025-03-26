@@ -1,9 +1,13 @@
 from newsapi import NewsApiClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 fin_results = []
 
 def finance():
-    newsapi = NewsApiClient(api_key='c89e3820dbd34bb1afe2b101c5ecc6a8')
+    newsapi = NewsApiClient(api_key=os.getenv("NEWS_API"))
 
     top_headlines = newsapi.get_top_headlines(q='',
                                             category='business',
