@@ -12,13 +12,13 @@ def science():
     top_headlines = newsapi.get_top_headlines(q='',
                                             category='science',
                                             language='en',
-                                            page_size=2
+                                            page_size=4
                                             )
 
     # print(top_headlines)
 
     articles = top_headlines['articles']
-
+    print("Science")
     for source in articles:
         print("=" * 40)
         print(f"Title: {source["title"]}")
@@ -28,32 +28,10 @@ def science():
         print(f"Date: {source["publishedAt"][:source["publishedAt"].find("T")]}")
         print("=" * 40)
         print("\n")
-
-        news.append([source["urlToImage"], source["title"], source["description"], source["url"]])
-
-    top_headlines = newsapi.get_top_headlines(q='',
-                                            category='technology',
-                                            language='en',
-                                            page_size=2
-                                            )
-
-    # print(top_headlines)
-
-    articles = top_headlines['articles']
-
-    for source in articles:
-        print("=" * 40)
-        print(f"Title: {source["title"]}")
-        print(f"Description: {source["description"]}")
-        print(f"Url: {source["url"]}")
-        print(f"Image Url: {source["urlToImage"]}")
-        print(f"Date: {source["publishedAt"][:source["publishedAt"].find("T")]}")
-        print("=" * 40)
-        print("\n")
-        if source['description'] != None and len(source['description']) > 150:
+        if source['description'] != None and len(source['description']) > 130:
             news.append([source["urlToImage"], source["title"], source["description"][:130]+"...", source["url"]])
         else:
             news.append([source["urlToImage"], source["title"], source["description"], source["url"]])
-
+    print("End of Science")
     return news
 

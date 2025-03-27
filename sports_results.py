@@ -1,175 +1,147 @@
 import requests
+from serpapi import GoogleSearch
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 soccer = []
 bball = []
 madness = []
 
 def sports():
-    #SOCCER PREM LEAGUE
-    data = requests.post("https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard")
-    data = data.json()
+    params = {
+    "q": "premier league past matches",
+    "location": "austin, texas, united states",
+    "api_key": os.getenv("SERP_API")
+    }
+
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    sports_results = results["sports_results"]
+
+    games = sports_results["games"]
+    
     print("\nMatch Summary for Premier League")
     print("=" * 40)
-    for match in data["events"]:
-            print(f"Date: {match['date'][:match['date'].find('T')]}")
-            print(f"Teams: {match['competitions'][0]['competitors'][0]['team']['name']} vs {match['competitions'][0]['competitors'][1]['team']['name']}")
-            print(f"Team 1 Logo: {match['competitions'][0]['competitors'][0]['team']['logo']}")
-            print(f"Team 2 Logo:  {match['competitions'][0]['competitors'][1]['team']['logo']}")
-            print(f"Score: {match['competitions'][0]['competitors'][0]['score']} - {match['competitions'][0]['competitors'][1]['score']}")
-            print(f"Status: {match['competitions'][0]['status']['type']['description']}")
-
-            soccer.append([match['competitions'][0]['competitors'][0]['team']['shortDisplayName'], match['competitions'][0]['competitors'][1]['team']['shortDisplayName'], match['competitions'][0]['competitors'][0]['team']['logo'], match['competitions'][0]['competitors'][1]['team']['logo'], match['competitions'][0]['competitors'][0]['score'], match['competitions'][0]['competitors'][1]['score'], match['competitions'][0]['status']['type']['description']])
-
-            scorers = []
-        
-            # Loop through details to find goals
-            for detail in match['competitions'][0]['details']:
-                if detail['type']['id'] == "70":  # Check if it's a goal
-                    for athlete in detail['athletesInvolved']:
-                        scorers.append(f"{athlete['displayName']} ({detail['clock']['displayValue']})")
-            
-            # Print scorers if any
-            if scorers:
-                print("Scorers:")
-                for scorer in scorers:
-                    print(f"  - {scorer}")
-            else:
-                print("Scorers: None")
-            
-            print("-" * 40)
+    for game in games[:4]:
+        print(game["teams"][0]["name"])
+        print(game["teams"][0]["thumbnail"])
+        print(game["teams"][0].get("score", "N/A"))
+        print("-"*10)
+        print(game["teams"][1]["name"])
+        print(game["teams"][1]["thumbnail"])
+        print(game["teams"][1].get("score", "N/A"))
+        soccer.append([game["teams"][0]["name"], game["teams"][1]["name"], game["teams"][0]["thumbnail"], game["teams"][1]["thumbnail"], game["teams"][0].get("score", "N/A"), game["teams"][1].get("score", "N/A")])
     print("=" * 40)
 
 
 
     #SOCCER LA LIGA
-    data = requests.post("https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard")
-    data = data.json()
+    params = {
+    "q": "la liga past matches",
+    "location": "austin, texas, united states",
+    "api_key": os.getenv("SERP_API")
+    }
+
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    sports_results = results["sports_results"]
+
+    games = sports_results["games"]
+    
     print("\nMatch Summary for La Liga")
     print("=" * 40)
-    for match in data["events"]:
-            print(f"Date: {match['date'][:match['date'].find('T')]}")
-            print(f"Teams: {match['competitions'][0]['competitors'][0]['team']['name']} vs {match['competitions'][0]['competitors'][1]['team']['name']}")
-            print(f"Team 1 Logo: {match['competitions'][0]['competitors'][0]['team']['logo']}")
-            print(f"Team 2 Logo:  {match['competitions'][0]['competitors'][1]['team']['logo']}")
-            print(f"Score: {match['competitions'][0]['competitors'][0]['score']} - {match['competitions'][0]['competitors'][1]['score']}")
-            print(f"Status: {match['competitions'][0]['status']['type']['description']}")
-            soccer.append([match['competitions'][0]['competitors'][0]['team']['shortDisplayName'], match['competitions'][0]['competitors'][1]['team']['shortDisplayName'], match['competitions'][0]['competitors'][0]['team']['logo'], match['competitions'][0]['competitors'][1]['team']['logo'], match['competitions'][0]['competitors'][0]['score'], match['competitions'][0]['competitors'][1]['score'], match['competitions'][0]['status']['type']['description']])
-            scorers = []
-        
-            # Loop through details to find goals
-            for detail in match['competitions'][0]['details']:
-                if detail['type']['id'] == "70":  # Check if it's a goal
-                    for athlete in detail['athletesInvolved']:
-                        scorers.append(f"{athlete['displayName']} ({detail['clock']['displayValue']})")
-            
-            # Print scorers if any
-            if scorers:
-                print("Scorers:")
-                for scorer in scorers:
-                    print(f"  - {scorer}")
-            else:
-                print("Scorers: None")
-            
-            print("-" * 40)
+    for game in games[:3]:
+        print(game["teams"][0]["name"])
+        print(game["teams"][0]["thumbnail"])
+        print(game["teams"][0].get("score", "N/A"))
+        print("-"*10)
+        print(game["teams"][1]["name"])
+        print(game["teams"][1]["thumbnail"])
+        print(game["teams"][1].get("score", "N/A"))
+        soccer.append([game["teams"][0]["name"], game["teams"][1]["name"], game["teams"][0]["thumbnail"], game["teams"][1]["thumbnail"], game["teams"][0].get("score", "N/A"), game["teams"][1].get("score", "N/A")])
     print("=" * 40)
 
 
     #UCL
-    data = requests.post("https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard")
-    data = data.json()
-    print("\nMatch Summary for Champions League")
+    params = {
+    "q": "ucl matches",
+    "location": "austin, texas, united states",
+    "api_key": os.getenv("SERP_API")
+    }
+
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    sports_results = results["sports_results"]
+
+    games = sports_results["games"]
+    
+    print("\nMatch Summary for UCL")
     print("=" * 40)
-    for match in data["events"]:
-            print(f"Date: {match['date'][:match['date'].find('T')]}")
-            print(f"Teams: {match['competitions'][0]['competitors'][0]['team']['name']} vs {match['competitions'][0]['competitors'][1]['team']['name']}")
-            print(f"Team 1 Logo: {match['competitions'][0]['competitors'][0]['team']['logo']}")
-            print(f"Team 2 Logo:  {match['competitions'][0]['competitors'][1]['team']['logo']}")
-            print(f"Score: {match['competitions'][0]['competitors'][0]['score']} - {match['competitions'][0]['competitors'][1]['score']}")
-            print(f"Status: {match['competitions'][0]['status']['type']['description']}")
-            soccer.append([match['competitions'][0]['competitors'][0]['team']['shortDisplayName'], match['competitions'][0]['competitors'][1]['team']['shortDisplayName'], match['competitions'][0]['competitors'][0]['team']['logo'], match['competitions'][0]['competitors'][1]['team']['logo'], match['competitions'][0]['competitors'][0]['score'], match['competitions'][0]['competitors'][1]['score'], match['competitions'][0]['status']['type']['description']])
-            scorers = []
-        
-            # Loop through details to find goals
-            for detail in match['competitions'][0]['details']:
-                if detail['type']['id'] == "70":  # Check if it's a goal
-                    for athlete in detail['athletesInvolved']:
-                        scorers.append(f"{athlete['displayName']} ({detail['clock']['displayValue']})")
-            
-            # Print scorers if any
-            if scorers:
-                print("Scorers:")
-                for scorer in scorers:
-                    print(f"  - {scorer}")
-            else:
-                print("Scorers: None")
-            
-            print("-" * 40)
+    for game in games[:3]:
+        print(game["teams"][0]["name"])
+        print(game["teams"][0]["thumbnail"])
+        print(game["teams"][0].get("score", "N/A"))
+        print("-"*10)
+        print(game["teams"][1]["name"])
+        print(game["teams"][1]["thumbnail"])
+        print(game["teams"][1].get("score", "N/A"))
+        soccer.append([game["teams"][0]["name"], game["teams"][1]["name"], game["teams"][0]["thumbnail"], game["teams"][1]["thumbnail"], game["teams"][0].get("score", "N/A"), game["teams"][1].get("score", "N/A")])
     print("=" * 40)
 
 
     #NBA
-    game = requests.post("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard")
-    game = game.json()
-    print("\nMatch Summary for NBA")
-    for match in game["events"]:
-            print(f"Date: {match['date'][:match['date'].find('T')]}")
-            print(f"Teams: {match['competitions'][0]['competitors'][0]['team']['name']} vs {match['competitions'][0]['competitors'][1]['team']['name']}")
-            print(f"Team 1 Logo: {match['competitions'][0]['competitors'][0]['team']['logo']}")
-            print(f"Team 2 Logo:  {match['competitions'][0]['competitors'][1]['team']['logo']}")
-            print(f"Score: {match['competitions'][0]['competitors'][0]['score']} - {match['competitions'][0]['competitors'][1]['score']}")
-            print(f"Status: {match['competitions'][0]['status']['type']['description']}")
-            bball.append([match['competitions'][0]['competitors'][0]['team']['name'], match['competitions'][0]['competitors'][1]['team']['name'], match['competitions'][0]['competitors'][0]['team']['logo'], match['competitions'][0]['competitors'][1]['team']['logo'], match['competitions'][0]['competitors'][0]['score'], match['competitions'][0]['competitors'][1]['score'], match['competitions'][0]['status']['type']['description']])
-            top_scorers = []
-        
-            # Loop through competitors to find top scorers
-            for competitor in match['competitions'][0]['competitors']:
-                for leader in competitor['leaders']:
-                    if leader['name'] == 'points':
-                        for scorer in leader['leaders']:
-                            top_scorers.append(f"{scorer['athlete']['displayName']} ({scorer['displayValue']})")
-            
-            # Print top scorers if any
-            if top_scorers:
-                print("Top Scorers:")
-                for scorer in top_scorers:
-                    print(f"  - {scorer}")
-            else:
-                print("Top Scorers: None")
+    params = {
+    "q": "nba past matches",
+    "location": "austin, texas, united states",
+    "api_key": os.getenv("SERP_API")
+    }
 
-            print("-" * 40)
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    sports_results = results["sports_results"]
+
+    games = sports_results["games"]
+    
+    print("\nMatch Summary for NBA")
+    print("=" * 40)
+    for game in games:
+        print(game["teams"][0]["name"])
+        print(game["teams"][0]["thumbnail"])
+        print(game["teams"][0].get("score", "N/A"))
+        print("-"*10)
+        print(game["teams"][1]["name"])
+        print(game["teams"][1]["thumbnail"])
+        print(game["teams"][1].get("score", "N/A"))
+        bball.append([game["teams"][0]["name"], game["teams"][1]["name"], game["teams"][0]["thumbnail"], game["teams"][1]["thumbnail"], game["teams"][0].get("score", "N/A"), game["teams"][1].get("score", "N/A")])
     print("=" * 40)
 
 
     #March Madness
-    game = requests.post("https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard")
-    game = game.json()
-    print("\nMatch Summary for March Madness")
-    for match in game["events"]:
-            print(f"Date: {match['date'][:match['date'].find('T')]}")
-            print(f"Teams: {match['competitions'][0]['competitors'][0]['team']['name']} vs {match['competitions'][0]['competitors'][1]['team']['name']}")
-            print(f"Team 1 Logo: {match['competitions'][0]['competitors'][0]['team']['logo']}")
-            print(f"Team 2 Logo:  {match['competitions'][0]['competitors'][1]['team']['logo']}")
-            print(f"Score: {match['competitions'][0]['competitors'][0]['score']} - {match['competitions'][0]['competitors'][1]['score']}")
-            print(f"Status: {match['competitions'][0]['status']['type']['description']}")
-            madness.append([match['competitions'][0]['competitors'][0]['team']['name'], match['competitions'][0]['competitors'][1]['team']['name'], match['competitions'][0]['competitors'][0]['team']['logo'], match['competitions'][0]['competitors'][1]['team']['logo'], match['competitions'][0]['competitors'][0]['score'], match['competitions'][0]['competitors'][1]['score'], match['competitions'][0]['status']['type']['description']])
-            top_scorers = []
-        
-            # Loop through competitors to find top scorers
-            for competitor in match['competitions'][0]['competitors']:
-                for leader in competitor['leaders']:
-                    if leader['name'] == 'points':
-                        for scorer in leader['leaders']:
-                            top_scorers.append(f"{scorer['athlete']['displayName']} ({scorer['displayValue']})")
-            
-            # Print top scorers if any
-            if top_scorers:
-                print("Top Scorers:")
-                for scorer in top_scorers:
-                    print(f"  - {scorer}")
-            else:
-                print("Top Scorers: None")
+    params = {
+    "q": "march madness past matches",
+    "location": "austin, texas, united states",
+    "api_key": os.getenv("SERP_API")
+    }
 
-            print("-" * 40)
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    sports_results = results["sports_results"]
+
+    games = sports_results["games"]
+    
+    print("\nMatch Summary for March Madness")
+    print("=" * 40)
+    for game in games:
+        print(game["teams"][0]["name"])
+        print(game["teams"][0]["thumbnail"])
+        print(game["teams"][0].get("score", "N/A"))
+        print("-"*10)
+        print(game["teams"][1]["name"])
+        print(game["teams"][1]["thumbnail"])
+        print(game["teams"][1].get("score", "N/A"))
+        madness.append([game["teams"][0]["name"], game["teams"][1]["name"], game["teams"][0]["thumbnail"], game["teams"][1]["thumbnail"], game["teams"][0].get("score", "N/A"), game["teams"][1].get("score", "N/A")])
     print("=" * 40)
 
     # #NFL (Not season yet)
@@ -227,5 +199,5 @@ def sports():
 
     #     print("-" * 40)
     # print("=" * 40)
-
+    print("End of Sports")
     return soccer, bball, madness

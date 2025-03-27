@@ -6,84 +6,81 @@
     <title>Newsletter</title>
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-    :root {
-        --font1: "DM Sans", sans-serif;
-        --font2: "Work Sans", sans-serif;
-    }
+    @import "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap";
 
+    :root {
+        --font1: "DM Sans", "Helvetica";
+        --font2: "Work Sans", "Arial";
+    }
+    
     * {
+        vertical-align: baseline;
         margin: 0;
         padding: 0;
-        font-size: 100%;
-        vertical-align: baseline;
+        font-size: 100%
     }
 
     article {
         width: 80%;
-        margin: auto;
+        margin: auto
     }
 
     .large {
         font-family: var(--font1);
-        font-size: 40px;
         color: #333;
-        font-weight: bold;
+        font-size: 30px;
+        font-weight: 700
+    }
+
+    .medium-large {
+        font-family: var(--font1);
+        font-size: 20px;
     }
 
     .small {
         font-family: var(--font2);
-        color: black;
+        color: #000;
         font-size: 15px;
     }
 
     .medium {
         font-family: var(--font2);
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .littleSpace {
-        padding: 20px;
-    }
-
-    .mediumSpace {
-        padding: 40px;
-    }
-
-    .largeSpace {
-        padding: 60px;
+        padding: 20px
     }
 
     .margin-top {
-        margin-top: 20px;
+        margin-top: 20px
     }
 
     .margin-bottom {
-        margin-bottom: 20px;
+        margin-bottom: 20px
     }
 
     .small-margin-top {
-        margin-top: 5px;
+        margin-top: 5px
     }
 
     .small-margin-bottom {
-        margin-bottom: 5px;
+        margin-bottom: 5px
     }
 
     .bold {
-        font-weight: bold;
+        font-weight: 700
     }
 
     .card {
-        padding: 25px 15px;
         border: 3px solid #333;
         border-radius: 10px;
-        width: 350px;
+        padding: 25px 15px;
     }
 
     img {
-        width: 100%;
         border-radius: 10px;
+        width: 100%;
     }
 
     .sports {
@@ -91,39 +88,42 @@
     }
 
     a:not(.lakshan) {
-        padding: 10px;
+        color: #000;
         border: 2px solid #333;
         border-radius: 5px;
-        color: black;
-        text-decoration: none;
+        padding: 10px;
+        text-decoration: none
     }
 
-    .cardContainer {
-        gap: 30px 20px;
+    .card img {
+        object-fit: cover
     }
 
     .sportCard {
-        height: 120px;
-        padding: 10px;
+        box-sizing: border-box;
         border: 3px solid #333;
         border-radius: 10px;
-    }
-
-    table {
-        width: 100%;
+        width: max-content;
+        margin: 5px;
+        padding: 10px;
     }
 
     .sportCard table tr td {
-        padding: 5px;
         text-align: center;
+        vertical-align: middle;
+        /* width: auto; */
+        /* height: 120px; */
+        padding: 5px
     }
 
-    .headlines table tr td, .sports table tr td {
-        padding: 5px;
+    .team {
+        text-align: center;
+        /* display: inline-block */
     }
 
     .team img {
-        margin: 10px;
+        margin: 0 auto;
+        display: block
     }
 
     .logo {
@@ -132,21 +132,33 @@
     }
 
     .footer {
-        padding: 20px 0;
+        padding: 20px 0
     }
 
-    table, caption, tbody, tfoot, thead, tr, th, td  {
-    margin: 0;
-    /* padding: 10px 5px; */
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
+    .table {
+        float: left;
+        width: 100%;
+        display: block;
     }
 
-    table {
-        text-align: left;
+    section table tr td {
+        padding: 5px;
+    }
+
+    .headlines table tr td,
+    .finance table tr td,
+    .science table tr td {
+        display: inline-block;
+        max-width: 360px;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .sports table tr td {
+        display: inline-block;
+        max-width: 350px;
+        /* width: 200px; */
+        height: max-content;
     }
 </style>
 <body>

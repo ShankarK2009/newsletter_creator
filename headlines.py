@@ -1,20 +1,23 @@
-from newsapi import NewsApiClient
+import requests
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
+NEWS_API = os.getenv("NEWS_API")
+
 results = []
 
 def get_headlines():
-    newsapi = NewsApiClient(api_key=os.getenv("NEWS_API"))
-
-    response = newsapi.get_top_headlines(
-                                            language='en',
-                                            page_size=4
-                                            )
+    url = ('https://newsapi.org/v2/top-headlines?'
+        'country=us&'
+        'apiKey='+NEWS_API)
+    response = requests.get(url)
+    response = response.json()
+    print(response)
     articles = response['articles']
 
+    print("Headlines")
     for source in articles[:4]:
         print("=" * 40)
         print(f"Title: {source["title"]}")
@@ -28,5 +31,5 @@ def get_headlines():
             results.append([source["urlToImage"], source["title"], source["description"][:130]+"...", source["url"]])
         else:
             results.append([source["urlToImage"], source["title"], source["description"], source["url"]])
-    
+    print("End of Headlines")
     return results
