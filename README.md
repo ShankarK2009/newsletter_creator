@@ -50,6 +50,7 @@ streamlit run app.py
 ✅ User-friendly GUI for easy customization  
 ✅ Automatically formats the newsletter for readability  
 ✅ One-click newsletter generation  
+✅ If you want to send an email, use [**Postdrop**](http://postdrop.io) to send the newsletter as an email template
 
 ## 📜 License  
 This project is licensed under the MIT License.  
