@@ -355,7 +355,7 @@ def footer_code(name):
     """
      return footer
 
-def create(name, headlines_slider, sports_slider, tech_slider, science_slider):
+def create(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify):
     html_code = """
     <!DOCTYPE html>
     <html lang="en">
@@ -454,7 +454,8 @@ def create(name, headlines_slider, sports_slider, tech_slider, science_slider):
         }
 
         .card img {
-            object-fit: cover
+            object-fit: cover;
+            height: 200px;
         }
 
         .sportCard {
@@ -553,9 +554,11 @@ def create(name, headlines_slider, sports_slider, tech_slider, science_slider):
 
     html_file = open("generated_newsletter.html", "w")
 
-    html_code = css_inline.inline(html_code)
+    if inline_css:
+        html_code = css_inline.inline(html_code)
 
-    html_code = minify_html.minify(html_code, remove_processing_instructions=True)
+    if minify:
+        html_code = minify_html.minify(html_code, remove_processing_instructions=True)
 
     html_code += "</body></head></html>"
 
