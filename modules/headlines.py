@@ -8,7 +8,7 @@ NEWS_API = os.getenv("NEWS_API")
 
 results = []
 
-def get_headlines():
+def get_headlines(num):
     url = ('https://newsapi.org/v2/top-headlines?'
         'country=us&'
         'apiKey='+NEWS_API)
@@ -18,7 +18,7 @@ def get_headlines():
     articles = response['articles']
 
     print("Headlines")
-    for source in articles[:4]:
+    for source in articles[:num]:
         print("=" * 40)
         print(f"Title: {source["title"]}")
         print(f"Description: {source["description"]}")

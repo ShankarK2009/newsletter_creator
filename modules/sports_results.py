@@ -9,7 +9,7 @@ soccer = []
 bball = []
 madness = []
 
-def sports():
+def sports(num):
     params = {
     "q": "premier league past matches",
     "location": "austin, texas, united states",
@@ -24,7 +24,7 @@ def sports():
     
     print("\nMatch Summary for Premier League")
     print("=" * 40)
-    for game in games[:4]:
+    for game in games[:num]:
         print(game["teams"][0]["name"])
         print(game["teams"][0]["thumbnail"])
         print(game["teams"][0].get("score", "N/A"))
@@ -52,7 +52,7 @@ def sports():
     
     print("\nMatch Summary for La Liga")
     print("=" * 40)
-    for game in games[:3]:
+    for game in games[:num]:
         print(game["teams"][0]["name"])
         print(game["teams"][0]["thumbnail"])
         print(game["teams"][0].get("score", "N/A"))
@@ -79,7 +79,7 @@ def sports():
     
     print("\nMatch Summary for UCL")
     print("=" * 40)
-    for game in games[:3]:
+    for game in games[:num]:
         print(game["teams"][0]["name"])
         print(game["teams"][0]["thumbnail"])
         print(game["teams"][0].get("score", "N/A"))

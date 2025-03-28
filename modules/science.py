@@ -8,11 +8,11 @@ newsapi = NewsApiClient(api_key=os.getenv("NEWS_API"))
 
 news = []
 
-def science():
+def science(num):
     top_headlines = newsapi.get_top_headlines(q='',
                                             category='science',
                                             language='en',
-                                            page_size=4
+                                            page_size=num
                                             )
 
     # print(top_headlines)
