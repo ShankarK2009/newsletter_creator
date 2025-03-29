@@ -47,7 +47,7 @@ def sports(num):
 
     search = GoogleSearch(params)
     results = search.get_dict()
-    print(results["sports_results"])
+    print(results)
     sports_results = results["sports_results"]
 
     games = sports_results["games"]
