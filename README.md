@@ -1,4 +1,4 @@
-# The Daily Pulse Generator 📰🚀  
+# The Weekly Pulse Generator 📰🚀  
 
 Automate your newsletter creation with ease! This tool lets you generate a custom newsletter based on the latest global news, sports, finance, and tech updates using a simple GUI.  
 
@@ -10,7 +10,7 @@ Follow these steps to set up and run the repository on your local machine.
 First, clone the repository using Git:  
 
 ```sh
-git clone https://github.com/your-username/daily-pulse-generator.git  
+git clone https://github.com/Luck-shun30/newsletter-creator
 cd newsletter_creator 
 ```  
 
