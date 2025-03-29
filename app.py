@@ -38,26 +38,24 @@ def create_newsletter(name, headlines_slider, sports_slider, tech_slider, scienc
             dialog()
     download()
 
-    @st.fragment
-    def copy():
-        if st.button("Copy to Clipboard", key="copy"):
-            pyperclip.copy(code)
-            @st.dialog("Copied to Clipboard!")
-            def dialog():
-                st.write("Happy Reading!")
-            dialog()
-    copy()
-    
+    with st.expander("See HTML Code"):
+        st.text_area("HTML Code", code, 500)
+
     st.subheader("Headlines")
     st.dataframe(pd.DataFrame(main.headlines, columns=["Image", "Title", "Description", "URL"]), width=700)
+    st.divider()
     st.subheader("Soccer")
     st.dataframe(pd.DataFrame(main.soccer, columns=["Team Name 1", "Team Name 2", "Team 1 Logo", "Team 2 Logo", "Team 1 Score", "Team 2 Score"]), width=700)
+    st.divider()
     st.subheader("NBA")
     st.dataframe(pd.DataFrame(main.bball, columns=["Team Name 1", "Team Name 2", "Team 1 Logo", "Team 2 Logo", "Team 1 Score", "Team 2 Score"]), width=700)
+    st.divider()
     st.subheader("March Madness")
     st.dataframe(pd.DataFrame(main.madness, columns=["Team Name 1", "Team Name 2", "Team 1 Logo", "Team 2 Logo", "Team 1 Score", "Team 2 Score"]), width=700)
+    st.divider()
     st.subheader("Technology")
     st.dataframe(pd.DataFrame(main.tech_res, columns=["Image", "Title", "Description", "URL"]), width=700)
+    st.divider()
     st.subheader("Science")
     st.dataframe(pd.DataFrame(main.news, columns=["Image", "Title", "Description", "URL"]), width=700)
 

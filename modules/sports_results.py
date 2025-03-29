@@ -108,7 +108,7 @@ def sports(num):
     
     print("\nMatch Summary for NBA")
     print("=" * 40)
-    for game in games:
+    for game in games[:num]:
         print(game["teams"][0]["name"])
         print(game["teams"][0]["thumbnail"])
         print(game["teams"][0].get("score", "N/A"))
@@ -135,7 +135,7 @@ def sports(num):
     
     print("\nMatch Summary for March Madness")
     print("=" * 40)
-    for game in games:
+    for game in games[:num]:
         print(game["teams"][0]["name"])
         print(game["teams"][0]["thumbnail"])
         print(game["teams"][0].get("score", "N/A"))
