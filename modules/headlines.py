@@ -27,7 +27,7 @@ def get_headlines(num):
         print(f"Date: {source["publishedAt"][:source["publishedAt"].find("T")]}")
         print("=" * 40)
         print("\n")
-        if source['description'] != None and len(source['description']) > 150:
+        if source['description'] != None and len(source['description']) > 130:
             results.append([source["urlToImage"], source["title"], source["description"][:130]+"...", source["url"]])
         else:
             results.append([source["urlToImage"], source["title"], source["description"], source["url"]])

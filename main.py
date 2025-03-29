@@ -563,3 +563,4 @@ def create(name, headlines_slider, sports_slider, tech_slider, science_slider, i
     html_code += "</body></head></html>"
 
     html_file.write(html_code)
+    return html_code
