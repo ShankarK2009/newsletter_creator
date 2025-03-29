@@ -7,14 +7,6 @@ st.sidebar.title("Parameters")
 news_api = st.sidebar.text_input("News API Key:", value="")
 serp_api = st.sidebar.text_input("Serp API Key:", value="")
 
-env_file = open(".env", "w")
-
-api_keys = f"""NEWS_API={news_api}
-SERP_API={serp_api}
-"""
-
-env_file.write(api_keys)
-
 author = st.sidebar.text_input("Name of Author:", value="Lakshan Suresh")
 headlines_slider = st.sidebar.slider("Number of Headlines:", min_value=1, max_value=6, value=4, step=1, key="hlines")
 sports_slider = st.sidebar.slider("Number of Sports Results per League/Sport", min_value=1, max_value=4, value=4)
@@ -24,6 +16,17 @@ inline_css = st.sidebar.checkbox("Make CSS Inline", value=True)
 minify = st.sidebar.checkbox("Minify HTML", value=True)
 
 def create_newsletter(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify):
+    env_file = open(".env", "w")
+
+    print(news_api)
+    print(serp_api)
+
+    api_keys = f"""NEWS_API={news_api}
+    SERP_API={serp_api}
+    """
+
+    env_file.write(api_keys)
+    
     code = main.create(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify)
     
     @st.fragment    
