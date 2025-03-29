@@ -14,7 +14,6 @@ def get_headlines(num):
         'apiKey='+NEWS_API)
     response = requests.get(url)
     response = response.json()
-    print(response)
     articles = response['articles']
 
     print("Headlines")
