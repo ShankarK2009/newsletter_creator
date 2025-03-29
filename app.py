@@ -19,7 +19,7 @@ def create_newsletter(name, headlines_slider, sports_slider, tech_slider, scienc
     env_file = open(".env", "w")
 
     api_keys = f"""NEWS_API={news_api}
-    SERP_API={serp_api}
+SERP_API={serp_api}
     """
 
     print(news_api)
