@@ -17,6 +17,8 @@ minify = st.sidebar.checkbox("Minify HTML", value=True)
 
 def create_newsletter(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify):
     env_file = open(".env", "w")
+    print(news_api)
+    print(serp_api)
 
     api_keys = f"""NEWS_API={news_api}
 SERP_API={serp_api}
