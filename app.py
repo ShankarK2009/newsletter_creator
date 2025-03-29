@@ -22,6 +22,9 @@ def create_newsletter(name, headlines_slider, sports_slider, tech_slider, scienc
     SERP_API={serp_api}
     """
 
+    print(news_api)
+    print(serp_api)
+
     env_file.write(api_keys)
     
     code = main.create(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify)
