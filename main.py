@@ -10,6 +10,7 @@ headlines = None
 soccer, bball, madness = None, None, None
 tech_res = None
 news = None
+html_code = ""
 
 def headlines_code(headlines_slider):
     global headlines
@@ -356,6 +357,7 @@ def footer_code(name):
      return footer
 
 def create(name, headlines_slider, sports_slider, tech_slider, science_slider, inline_css, minify):
+    global html_code
     html_code = """
     <!DOCTYPE html>
     <html lang="en">
